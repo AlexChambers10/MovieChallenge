@@ -1,0 +1,24 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Movie filters
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list cols="2" rowHeight="75px">
+      <mat-grid-tile colsspan="1">
+        <form class="example-container">
+          <mat-checkbox *ngFor="let genre of movieGenres" value={{genre.id}} style="padding:5px;" (change)="updateGenres($event)">{{genre.name}}</mat-checkbox>
+        </form>
+      </mat-grid-tile>
+      <mat-grid-tile colsspan="1">
+          <mat-form-field>
+              <mat-label>Movie Rating</mat-label>
+            <mat-select (selectionChange)="updateMovieRating($event)">
+              <mat-option *ngFor="let rating of ratingOptions" value={{rating}}>{{rating}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</mat-accordion>

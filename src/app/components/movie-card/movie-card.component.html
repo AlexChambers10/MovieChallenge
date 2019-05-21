@@ -1,0 +1,44 @@
+<mat-card *ngIf="movieGenres && movie">
+  <mat-card-header>
+    <mat-card-title>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-grid-list cols="4" rowHeight="200px" >
+      <mat-grid-tile colspan="1" rowspan=1>
+        <img mat-card-lg-image src="{{tmdbBaseUrl}}{{movie.poster_path}}">
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <div class="form-container">
+          <mat-form-field>
+            <input matInput placeholder="Title" value="{{movie.title}}" [disabled]="true">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Genres" value="{{getGenres(movie.genre_ids)}}" [disabled]="true">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Average Rating" value="{{movie.vote_average}}" [disabled]="true">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+          <div class="form-container">
+            <mat-form-field>
+              <input matInput placeholder="Popularity" value="{{movie.popularity}}" [disabled]="true">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Release Date" value="{{movie.release_date}}" [disabled]="true">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Adult" value="{{movie.adult}}" [disabled]="true">
+            </mat-form-field>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Overview" value="{{movie.overview}}" [disabled]="true" matTextareaAutosize matAutosizeMinRows=1 ></textarea>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

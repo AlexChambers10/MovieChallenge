@@ -1,0 +1,4 @@
+<app-movie-filter [movieGenres]=movieGenres></app-movie-filter>
+<div *ngFor="let movie of filteredMovieData" class="movie-list-container"> 
+  <app-movie-card [movie]=movie [movieGenres]=movieGenres></app-movie-card>
+</div>

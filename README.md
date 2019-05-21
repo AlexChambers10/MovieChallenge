@@ -1,6 +1,6 @@
 # MovieChallenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6 and using Node v10.15.3.
 
 To build the solution pull down the repository run npm install and then ng serve. 
 
